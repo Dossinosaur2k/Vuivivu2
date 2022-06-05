@@ -62,3 +62,10 @@ function uploadFile($request)
        $remove = Storage::disk('s3')->delete($imageName);
        return $remove;
     }
+
+function formatCurrencytoNumber($currency)
+{
+    $currency = str_replace(',','',$currency);
+    $number = intval($currency);
+    return $number;
+}

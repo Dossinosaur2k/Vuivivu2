@@ -123,7 +123,7 @@
 
                                                         <a target="_blank" href="{{ $tour->Tour_link }}  ">
 
-                                                            <img class="img-thumbnail" style="background-color: orange"
+                                                            <img class="img-thumbnail" style="background-color: orange; width:100px; height:50px"
                                                                 src="{{ $tour->Web_logo }}" alt="zz">
 
                                                         </a>

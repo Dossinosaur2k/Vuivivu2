@@ -132,7 +132,7 @@
                                                 <hr>
                                                 <p class="bottom-area d-flex flex-row">
                                                     <span> KH: {{ $tour->Tour_start_day }}</span>
-                                                    <span class="ml-auto"><a href="#">Xem Ngay</a></span>
+                                                    <span class="ml-auto"><a href="{{ $tour->Tour_link }}">Xem Ngay</a></span>
                                                 </p>
                                             </div>
                                         </div>

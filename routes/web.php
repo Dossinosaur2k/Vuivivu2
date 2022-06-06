@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,24 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Auth::routes(['verify' => true]);
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+ 
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/dashboard');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::get('/', function () {
     return view('pages.index');
@@ -21,7 +41,7 @@ Route::get('/', function () {
 //     return view('admin.index');
 // })->middleware('auth');
 
-Route::group(['prefix' => 'dashboard', 'middleware' => ['auth','check-status']], function () {
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth','verified','check-status']], function () {
     Route::get('/', function(){
         return view('admin.index');
     });

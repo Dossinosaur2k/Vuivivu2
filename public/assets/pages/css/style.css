@@ -9421,6 +9421,9 @@ textarea.form-control {
   .carousel-img {
     height: 200px;
 }
+.ads-img {
+  height: 120px;
+}
 }
 @-webkit-keyframes loader-rotate {
   100% {

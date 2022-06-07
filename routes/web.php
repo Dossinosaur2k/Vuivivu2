@@ -33,9 +33,7 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     return redirect('/dashboard');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/',[App\Http\Controllers\PageController::class, 'index']);
 
 // Route::get('/dashboard', function () {
 //     return view('admin.index');

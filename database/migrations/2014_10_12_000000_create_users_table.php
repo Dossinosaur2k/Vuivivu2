@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('role')->unsigned();
             $table->foreign('role')
             ->references('id')
-            ->on('Roles')
+            ->on('roles')
             ->onDelete('cascade');
             $table->integer('status')->comment('1- kích hoạt, 0- vô hiệu hóa')->default(1);
             $table->rememberToken();

@@ -169,6 +169,33 @@
             </li>
           </ul>
         </li>
+        @if (Auth()->user()->Role->name === 'Super admin')
+        <li class="nav-item {{Request::is('dashboard/analytic/*')?'menu-open':''}}">
+          <a href="#" class="nav-link {{Request::is('dashboard/analytic/*')?'active':''}}">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Analytics
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+           
+            <li class="nav-item">
+              <a href="{{ route('chart-visistor') }}" class="nav-link {{Request::is('dashboard/analytic/visistor*')?'active':''}}">
+                
+                <p>Visitors</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('chart-user-type') }}" class="nav-link {{Request::is('dashboard/analytic/user-type')?'active':''}}">
+                <p>User type</p>
+              </a>
+            </li>
+           
+          </ul>
+         
+        </li>
+         @endif
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

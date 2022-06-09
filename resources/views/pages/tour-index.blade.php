@@ -57,8 +57,12 @@
                                 @foreach ($banners as  $index => $banner)
                                     <div class="carousel-item {{ $index==0?'active':'' }} ">
                                         <a target="_blank" href="{{ $banner->url }}" class="open-in-newtab">
-                                        <img class="d-block img-fluid"
-                                            src="{{ Storage::disk('s3')->url($banner->image_path) }}" alt="{{ $banner->description }}">
+                                        <div class="carousel-img" style="background-image: url({{ Storage::disk('s3')->url($banner->image_path) }})">
+
+                                        </div>
+                                        {{-- <img class="d-block img-fluid"
+                                            src="{{ Storage::disk('s3')->url($banner->image_path) }}" alt="{{ $banner->description }}"
+                                            > --}}
                                         </a>
                                     </div>
                                 @endforeach
@@ -93,12 +97,13 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <div class="d-flex flex-row " style="margin-left:12px">
+                    <div class="d-flex flex-row flex-wrap " style="margin:0px 12px">
                         @foreach ($ads as $ad)
                         <div class="ads-wrap">
                             <a target="_blank" href="{{ $ad->url }}">
-                                <img src="{{ Storage::disk('s3')->url($ad->image_path) }}"
-                                    class="card-img-top" alt="{{ $ad->name }}">
+                                {{-- <img src="{{ Storage::disk('s3')->url($ad->image_path) }}"
+                                    class="card-img-top" alt="{{ $ad->name }}"> --}}
+                                    <div class="ads-img" style="background-image: url({{ Storage::disk('s3')->url($ad->image_path)}})"></div>
                             </a>
                         </div>
                         @endforeach

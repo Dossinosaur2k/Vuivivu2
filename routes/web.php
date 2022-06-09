@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,19 +14,34 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Auth::routes(['verify' => true]);
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+ 
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/dashboard');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::get('/',[App\Http\Controllers\PageController::class, 'index']);
 
 // Route::get('/dashboard', function () {
 //     return view('admin.index');
 // })->middleware('auth');
 
-Route::group(['prefix' => 'dashboard', 'middleware' => ['auth','check-status']], function () {
-    Route::get('/', function(){
-        return view('admin.index');
-    });
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth','verified','check-status']], function () {
+    Route::get('/', [App\Http\Controllers\PageController::class, 'index_dashbroad'])->name('dashboard-admin');
+    
     Route::get('user/profile/{user}', [App\Http\Controllers\UsersController::class, 'show'])->name('profile');
     Route::put('user/profile/{user}', [App\Http\Controllers\UsersController::class, 'updateProfile'])->name('update-profile');
     Route::put('user/change-password/{user}', [App\Http\Controllers\UsersController::class, 'changePassword'])->name('change-password');
@@ -82,6 +99,14 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth','check-status']],
         Route::delete('/destroy/{ad}',[App\Http\Controllers\AdsController::class, 'destroy'])->name('destroy-ad');
         Route::put('/handle/{ad}', [App\Http\Controllers\AdsController::class, 'handle'])->name('handle-ad');
     });
+
+    Route::group(['prefix' => 'analytic', 'middleware' => ['check-role']], function(){
+        Route::get('/index', [App\Http\Controllers\AnalyticsController::class,'index']);
+        Route::get('/visistor', [App\Http\Controllers\AnalyticsController::class, 'analyticVisistor'])->name('chart-visistor');
+        Route::get('/user-type', [App\Http\Controllers\AnalyticsController::class, 'analyticUserType'])->name('chart-user-type');
+        Route::get('/export/{date_range}',[App\Http\Controllers\AnalyticsController::class, 'export'])->name('export');
+    });
+
 });
 
 
@@ -99,4 +124,4 @@ Route::prefix('blog')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -77,6 +77,7 @@ class ToursController extends Controller
 
     public function search(Request $request)
     {
+        // dd(formatCurrencytoNumber($request->price));
         // try
         // {
         // $data = $request->validate([

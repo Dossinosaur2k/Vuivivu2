@@ -29,7 +29,7 @@
                                             placeholder="Nơi bạn muốn tới">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="price" class="form-control"
+                                        <input type="text" name="price" class="form-control"  id="tour-price"
                                             value="{{ Request::input('price') ? Request::input('price') : '' }}"
                                             placeholder="Khoảng giá">
                                     </div>
@@ -123,7 +123,7 @@
 
                                                         <a target="_blank" href="{{ $tour->Tour_link }}  ">
 
-                                                            <img class="img-thumbnail" style="background-color: orange"
+                                                            <img class="img-thumbnail" style="background-color: orange; width:100px; height:50px"
                                                                 src="{{ $tour->Web_logo }}" alt="zz">
 
                                                         </a>
@@ -132,7 +132,7 @@
                                                 <hr>
                                                 <p class="bottom-area d-flex flex-row">
                                                     <span> KH: {{ $tour->Tour_start_day }}</span>
-                                                    <span class="ml-auto"><a href="#">Xem Ngay</a></span>
+                                                    <span class="ml-auto"><a href="{{ $tour->Tour_link }}">Xem Ngay</a></span>
                                                 </p>
                                             </div>
                                         </div>

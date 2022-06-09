@@ -16,7 +16,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item">
-          <a href="/" class="nav-link">Home</a>
+          <a href="{{ route('dashboard-admin') }}" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">Contact</a>
@@ -60,7 +60,7 @@
     <!-- Right navbar links -->
     <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
       <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
+      {{-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fas fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
@@ -116,7 +116,7 @@
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
-      </li>
+      </li> --}}
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">

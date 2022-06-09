@@ -71,7 +71,7 @@ class TourRepositoryEloquent extends BaseRepository implements TourRepository
     public function getTour($params)
     {
         $key = convert_no_vietnamese($params->key);
-        $price = intval($params->price);
+        $price =    formatCurrencytoNumber($params->price);
         $filter = $params->filter;
         $website = $params->website;
         $perPage = 15;

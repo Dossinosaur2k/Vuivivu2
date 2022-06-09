@@ -51,24 +51,24 @@
     </div>
   </footer>
   
-<script src="{{ asset('assets/pages/js/jquery.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/jquery-migrate-3.0.1.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/popper.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/jquery.easing.1.3.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/jquery.waypoints.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/jquery.stellar.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/jquery.magnific-popup.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/aos.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/jquery.animateNumber.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/bootstrap-datepicker.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/jquery.timepicker.min.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/scrollax.min.js') }}"></script>
+<script src="{{ secure_asset('assets/pages/js/jquery.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/popper.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/bootstrap.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/aos.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/bootstrap-datepicker.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/jquery.timepicker.min.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/scrollax.min.js') }}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   {{-- <script src="js/google-map.js"></script> --}}
-  <script src="{{ asset('assets/pages/js/main.js') }}"></script>
-  <script src="{{ asset('assets/pages/js/mysetting.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/main.js') }}"></script>
+  <script src="{{ secure_asset('assets/pages/js/mysetting.js') }}"></script>
     
   </body>
 </html>

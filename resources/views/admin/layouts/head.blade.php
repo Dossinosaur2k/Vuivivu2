@@ -12,8 +12,8 @@
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('assets/dashboard/dist/css/adminlte.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/dashboard/summernote/summernote-bs4.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/dashboard/plugins/daterangepicker/daterangepicker.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <link rel="stylesheet" href="{{ secure_asset('assets/dashboard/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ secure_asset('assets/dashboard/summernote/summernote-bs4.min.css') }}">
+  <link rel="stylesheet" href="{{ secure_asset('assets/dashboard/plugins/daterangepicker/daterangepicker.css') }}">
+  <link rel="stylesheet" href="{{ secure_asset('assets/dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
 </head>

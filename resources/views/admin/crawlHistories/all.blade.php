@@ -46,7 +46,7 @@
                   @foreach ($histories as $index => $history)
                   <tr>
                     <td> {{ $index+1 }}
-                    <td>{{ $history->time }}</td>
+                    <td>{{ $history->time_format }}</td>
                     <td>{{ $history->total_old_record }}</td>
                     <td>{{ $history->total_record_crawled}}</td>
                     <td>{{ $history->total_record_removed  }}</td>

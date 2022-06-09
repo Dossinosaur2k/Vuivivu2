@@ -793,7 +793,6 @@
             <h3 class="heading mt-3"><a href="{{ route('show-blog-post',$post->slug) }}">{{ $post->name }}</a></h3>
             <div class="meta mb-3">
               <div><a href="#">{{ $post->created_at }}</a></div>
-              <div><a href="#">Admin</a></div>
               
             </div>
           </div>

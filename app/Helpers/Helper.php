@@ -69,3 +69,16 @@ function formatCurrencytoNumber($currency)
     $number = intval($currency);
     return $number;
 }
+
+function findMax($a,$b)
+{
+    return $a > $b ? $a : $b;
+}
+
+function percentHigher($new,$old)
+{
+    if($old>0)
+    return $new-$old ? round(($new-$old)/$old * 100,2) : 0;
+    else
+    return $new-$old ? round(($new-$old) * 100,2) : 0;
+}

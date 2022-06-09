@@ -14,4 +14,6 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('assets/dashboard/dist/css/adminlte.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/dashboard/summernote/summernote-bs4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/dashboard/plugins/daterangepicker/daterangepicker.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
 </head>

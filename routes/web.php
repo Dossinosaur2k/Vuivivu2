@@ -40,9 +40,8 @@ Route::get('/',[App\Http\Controllers\PageController::class, 'index']);
 // })->middleware('auth');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth','verified','check-status']], function () {
-    Route::get('/', function(){
-        return view('admin.index');
-    });
+    Route::get('/', [App\Http\Controllers\PageController::class, 'index_dashbroad'])->name('dashboard-admin');
+    
     Route::get('user/profile/{user}', [App\Http\Controllers\UsersController::class, 'show'])->name('profile');
     Route::put('user/profile/{user}', [App\Http\Controllers\UsersController::class, 'updateProfile'])->name('update-profile');
     Route::put('user/change-password/{user}', [App\Http\Controllers\UsersController::class, 'changePassword'])->name('change-password');
@@ -100,6 +99,14 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth','verified','check
         Route::delete('/destroy/{ad}',[App\Http\Controllers\AdsController::class, 'destroy'])->name('destroy-ad');
         Route::put('/handle/{ad}', [App\Http\Controllers\AdsController::class, 'handle'])->name('handle-ad');
     });
+
+    Route::group(['prefix' => 'analytic', 'middleware' => ['check-role']], function(){
+        Route::get('/index', [App\Http\Controllers\AnalyticsController::class,'index']);
+        Route::get('/visistor', [App\Http\Controllers\AnalyticsController::class, 'analyticVisistor'])->name('chart-visistor');
+        Route::get('/user-type', [App\Http\Controllers\AnalyticsController::class, 'analyticUserType'])->name('chart-user-type');
+        Route::get('/export/{date_range}',[App\Http\Controllers\AnalyticsController::class, 'export'])->name('export');
+    });
+
 });
 
 
@@ -117,4 +124,4 @@ Route::prefix('blog')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

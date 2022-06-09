@@ -205,7 +205,7 @@ class UsersController extends Controller
                 'message' => 'Update profile failed',
                 'errorBag' => $e->getMessageBag()->getMessages()
             ];
-            dd($errors);
+            
             return redirect()->back()->with('errors', $errors);
         }
     }

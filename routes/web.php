@@ -14,24 +14,24 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Auth::routes(['verify' => true]);
+Auth::routes(['verify' => true]);
 
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
+// Route::post('/email/verification-notification', function (Request $request) {
+//     $request->user()->sendEmailVerificationNotification();
  
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+//     return back()->with('message', 'Verification link sent!');
+// })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
+// Route::get('/email/verify', function () {
+//     return view('auth.verify-email');
+// })->middleware('auth')->name('verification.notice');
 
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
+// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//     $request->fulfill();
  
-    return redirect('/dashboard');
-})->middleware(['auth', 'signed'])->name('verification.verify');
+//     return redirect('/dashboard');
+// })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::get('/',[App\Http\Controllers\PageController::class, 'index']);
 
@@ -122,6 +122,6 @@ Route::prefix('blog')->group(function () {
     Route::get('/post/{slug}',[App\Http\Controllers\PostsController::class, 'show'])->name('show-blog-post');
 });
 
-Auth::routes();
+// Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

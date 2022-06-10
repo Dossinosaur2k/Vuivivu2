@@ -6,7 +6,7 @@
     <!-- Sidebar user (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="{{ Auth::user()->cover_image?Storage::disk('s3')->url(Auth::user()->cover_image):secure_asset('assets/images/no-avatar.jpg') }}" class="img-circle elevation-2" alt="User Image">
+        <img src="{{ Auth::user()->cover_image?Storage::disk('s3')->url(Auth::user()->cover_image):secure_asset('assets/dashboard/images/no-avatar.jpg') }}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
         <a href="{{ route('profile', Auth::user()->id) }}" class="d-block">{{ Auth::user()->name }}</a>

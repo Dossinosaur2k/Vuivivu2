@@ -30,7 +30,7 @@ class AnalyticsController extends Controller
             $endDay = Carbon::createFromFormat('d/m/Y', trim($dateRange[1]))
                 ->startOfDay()
                 ->diff(Carbon::today())
-                ->days < 1
+                ->days > 1
                 ? Carbon::createFromFormat('d/m/Y', trim($dateRange[1]))->startOfDay() : Carbon::today();
 
             $data = $this->getTotalVisitorsAndPageViewsInPeriod(

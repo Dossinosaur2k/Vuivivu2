@@ -42,7 +42,7 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle img-upload"
-                                        src="{{ $user->cover_image?Storage::disk('s3')->url($user->cover_image):'' }}" alt="User profile picture">
+                                        src="{{ $user->cover_image?Storage::disk('s3')->url($user->cover_image):asset('assets/dashboard/images/no-avatar.jpg')}}" alt="User profile picture">
                                 </div>
 
                                 <h3 class="profile-username text-center">{{ $user->name }}</h3>

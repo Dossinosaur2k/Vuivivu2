@@ -238,6 +238,6 @@ class PostsController extends Controller
             ]);
         }
 
-        return redirect()->back()->with('message', 'Post deleted successfully !');
+        return redirect()->back()->with('success', 'Post deleted successfully !');
     }
 }

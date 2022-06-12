@@ -228,7 +228,7 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        $deleted = $this->repository->deletePost($id);
+        $deleted = $this->post->deletePost($id);
 
         if (request()->wantsJson()) {
 

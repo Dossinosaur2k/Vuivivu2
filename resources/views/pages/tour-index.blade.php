@@ -22,7 +22,7 @@
                         <a href="{{ route('show-blog-post',$post->slug) }}" class="list-group-item list-group-item-action flex-column align-items-start ">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">{{ $post->name }}</h5>
-                                <small>{{ Carbon::parse($post->created_at)->diff(Carbon::now())->days < 1 ? 'Today': Carbon::parse($post->created_at)->diffForHumans(Carbon::now()).'days ago'}} </small>
+                                <small>{{ Carbon::parse($post->created_at)->diff(Carbon::now())->days < 1 ? 'Today': Carbon::parse($post->created_at)->diffForHumans(Carbon::now())}} </small>
                             </div>
                             <p class="mb-1">{{ $post->title }}</p>
                             <small>{{ $post->Category->name }}</small>

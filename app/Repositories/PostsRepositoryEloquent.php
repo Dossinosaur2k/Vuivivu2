@@ -56,8 +56,8 @@ class PostsRepositoryEloquent extends BaseRepository implements PostsRepository
 
     public function getBy($number)
     {
-        $perPage = 15;
-        $posts = $this->model()::orderBy('created_at','desc')->take($number)->paginate($perPage);
+        $perPage = $number;
+        $posts = $this->model()::orderBy('created_at','desc')->take($number)->get();
         return $posts;
     }
 

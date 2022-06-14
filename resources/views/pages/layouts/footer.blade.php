@@ -4,7 +4,7 @@
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">Vuivivu</h2>
-            <p>Vườn Quốc gia Phong Nha -  Kẻ Bàng được UNESCO vinh danh là Di sản thiên nhiên thế giới theo tiêu chí viii - giá trị địa chất, địa mạo (2003); tiêu chí ix và x -  sinh thái và đa dạng sinh học (2015</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt</p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
               <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>

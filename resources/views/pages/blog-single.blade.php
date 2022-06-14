@@ -37,14 +37,14 @@
           <p>Odit voluptatibus, eveniet vel nihil cum ullam dolores laborum, quo velit commodi rerum eum quidem pariatur! Quia fuga iste tenetur, ipsa vel nisi in dolorum consequatur, veritatis porro explicabo soluta commodi libero voluptatem similique id quidem? Blanditiis voluptates aperiam non magni. Reprehenderit nobis odit inventore, quia laboriosam harum excepturi ea.</p>
           <p>Adipisci vero culpa, eius nobis soluta. Dolore, maxime ullam ipsam quidem, dolor distinctio similique asperiores voluptas enim, exercitationem ratione aut adipisci modi quod quibusdam iusto, voluptates beatae iure nemo itaque laborum. Consequuntur et pariatur totam fuga eligendi vero dolorum provident. Voluptatibus, veritatis. Beatae numquam nam ab voluptatibus culpa, tenetur recusandae!</p>
           <p>Voluptas dolores dignissimos dolorum temporibus, autem aliquam ducimus at officia adipisci quasi nemo a perspiciatis provident magni laboriosam repudiandae iure iusto commodi debitis est blanditiis alias laborum sint dolore. Dolores, iure, reprehenderit. Error provident, pariatur cupiditate soluta doloremque aut ratione. Harum voluptates mollitia illo minus praesentium, rerum ipsa debitis, inventore?</p> --}}
-          <div class="tag-widget post-tag-container mb-5 mt-5">
+          {{-- <div class="tag-widget post-tag-container mb-5 mt-5">
             <div class="tagcloud">
               <a href="#" class="tag-cloud-link">Life</a>
               <a href="#" class="tag-cloud-link">Sport</a>
               <a href="#" class="tag-cloud-link">Tech</a>
               <a href="#" class="tag-cloud-link">Travel</a>
             </div>
-          </div>
+          </div> --}}
           
           {{-- <div class="about-author d-flex p-5 bg-light">
             <div class="bio align-self-md-center mr-5">
@@ -179,7 +179,7 @@
               </div>
             </form>
           </div>
-          <div class="sidebar-box ftco-animate">
+          {{-- <div class="sidebar-box ftco-animate">
             <div class="categories">
               <h3>Categories</h3>
               <li><a href="#">Tour <span>(12)</span></a></li>
@@ -245,7 +245,7 @@
           <div class="sidebar-box ftco-animate">
             <h3>Paragraph</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-          </div>
+          </div> --}}
         </div>
 
       </div>

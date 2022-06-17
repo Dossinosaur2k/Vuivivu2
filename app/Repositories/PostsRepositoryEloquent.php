@@ -47,9 +47,9 @@ class PostsRepositoryEloquent extends BaseRepository implements PostsRepository
         $this->pushCriteria(app(RequestCriteria::class));
     }
     
-    public function getAll()
+    public function getAll($number)
     {
-        $perPage = 15;
+        $perPage = $number;
         $posts = $this->model()::orderBy('created_at','desc')->paginate($perPage);
         return $posts;
     }

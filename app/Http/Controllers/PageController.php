@@ -43,7 +43,7 @@ class PageController extends Controller
 
     public function index()
     {
-        $posts = $this->post->getAll();
+        $posts = $this->post->getAll(8);
         return view('pages.index',compact('posts'));
     }
 

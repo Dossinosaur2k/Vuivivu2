@@ -11,7 +11,7 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface PostsRepository extends RepositoryInterface
 {
-    public function getAll();
+    public function getAll($number);
     public function getBy($number);
     public function createPost($param);
     public function deletePost($param);

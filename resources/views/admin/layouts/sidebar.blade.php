@@ -72,7 +72,7 @@
           </a>
         </li>
         @endif
-        
+        @if (Auth()->user()->Role->name === 'Super admin')
         <li class="nav-item {{Request::is('dashboard/category/*')?'menu-open':''}}">
           <a href="#" class="nav-link {{Request::is('dashboard/category/*')?'active':''}}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -98,6 +98,7 @@
            
           </ul>
         </li>
+        @endif
 
         <li class="nav-item {{Request::is('dashboard/banner/*')?'menu-open':''}}">
           <a href="#" class="nav-link {{Request::is('dashboard/banner/*')?'active':''}}">

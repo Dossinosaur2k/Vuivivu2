@@ -70,7 +70,7 @@ class PostsController extends Controller
     public function indexPage()
     {
         $this->post->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $posts = $this->post->getAll(8);
+        $posts = $this->post->getAll(16);
 
         if (request()->wantsJson()) {
 
